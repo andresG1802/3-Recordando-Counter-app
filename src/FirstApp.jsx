@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 export const FirstApp = ({ title, subTitle, name }) => {
     
     // console.log(props);
-    if(!title)
-    {
-        throw new Error('EL title no existe');
-    }
+    // if(!title)
+    // {
+    //     throw new Error('EL title no existe');
+    // }
     return(
         <>
             <h1>{ title }</h1>
