@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 export const CounterApp = ({value}) => {
 
-    const [ counter , setCounter] = useState( 0 );
+    const [ counter , setCounter] = useState( value );
 
     const handleAdd = () => {
         // Si pongo counter++ daria error por que es un const
@@ -14,7 +14,7 @@ export const CounterApp = ({value}) => {
         setCounter(counter -1 );
     }
     const handleReset = () =>{
-        setCounter(0);
+        setCounter(value);
     }
     return (
         <>
@@ -27,15 +27,15 @@ export const CounterApp = ({value}) => {
             <button onClick={ handleSubtract }>
                 -1
             </button>
-            <button onClick={ handleReset }>
-                
+            <button aria-label="btn-reset" onClick={ handleReset }>
+                Reset
             </button>
         </>
     );
 }
 
 CounterApp.propTypes = {
-    value:PropTypes.number
+    value:PropTypes.number.isRequired
 }
 
 // CounterApp.defaultProps = {
